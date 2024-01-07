@@ -1,0 +1,52 @@
+{
+  "suggest.noselect": true,
+  "diagnostic.locationlistUpdate": true,
+  "diagnostic.refreshOnInsertMode": true,
+
+  "clangd.arguments": [
+    "--compile-commands-dir=build",
+    "--query-driver=/usr/bin/clang++, /usr/bin/clang, /usr/bin/gcc, /usr/bin/g++, /usr/bin/arm-none-eabi-gcc, /usr/bin/arm-none-eabi-g++, /usr/local/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-gcc, /usr/local/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin/arm-linux-gnueabi-g++, /usr/local/gcc-linaro-12.3.1-2023.06-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc, /usr/local/gcc-linaro-12.3.1-2023.06-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++",
+    "--all-scopes-completion",
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--function-arg-placeholders",
+    "--header-insertion=iwyu",
+    "--header-insertion-decorators",
+    "--enable-config",
+    "-j=8",
+    "--pch-storage=memory",
+    "--pretty"
+  ],
+  "clangd.path":"/usr/bin/clangd",
+  "semanticTokens.enable": true,
+
+  "languageserver": {
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": [
+        "build/"
+      ],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    },
+
+    "lua": {
+      "command": "/home/kjlsai/.vscode/extensions/sumneko.lua-3.7.4-linux-x64/server/bin/lua-language-server",
+      "args": ["-E", "/home/kjlsai/.vscode/extensions/sumneko.lua-3.7.4-linux-x64/server/main.lua"],
+      "rootPatterns": [".git"],
+      "filetypes": ["lua"]
+    }
+  },
+
+  "Lua.misc.parameters": [
+    "--metapath",
+    "~/.cache/sumneko_lua/meta",
+    "--logpath",
+    "~/.cache/sumneko_lua/log"
+  ],
+  "sumneko-lua.locale":"zh-cn"
+
+}
